@@ -1,5 +1,5 @@
 {
-  "name": "addingMongoExample",
+  "name": "playingWithRouting",
   "version": "1.0.0",
   "description": "Adding mongo to our lab template",
   "main": "index.js",
