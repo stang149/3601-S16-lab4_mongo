@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+
+
+    <script type="text/javascript" src="views/main/main.js"></script>
+    <script type="text/javascript" src="views/main/main.controller.js"></script>
+
+    <script type="text/javascript" src="views/about/about.js"></script>
+    <!--<script type="text/javascript" src="views/main/about.controller.js"></script>-->
+
+    <script type="text/javascript" src="components/navbar/navbar.controller.js"></script>
+</head>
+<body ng-app="superSweetAppThing">
+    <div ui-view></div>
+    <a ui-sref="main">State: Main</a>
+    <a ui-sref="about">State: About</a>
+</body>
+</html>
