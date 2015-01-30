@@ -5,6 +5,8 @@
 angular.module('superSweetAppThing', [
     'ui.router'
 ])
-    .config(function($stateProvider, $urlRouterProvider){
+    .config(function($stateProvider, $urlRouterProvider, $locationProvider){
         $urlRouterProvider.otherwise('/');
+
+        $locationProvider.html5Mode(true);
     });
