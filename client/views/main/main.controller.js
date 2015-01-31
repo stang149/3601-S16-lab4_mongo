@@ -1,29 +1,35 @@
 'use strict';
 
 angular.module("superSweetAppThing")
-    .controller('mainCtrl', function($scope){
+    .controller('mainCtrl', function($scope, $http){
         console.log("main controller loaded!");
 
         $scope.textField = "";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
-        $scope.data = [
-            {text: "fish"},
-            {text: "kittens"},
-            {text: "snake"},
-            {text: "badger"},
-            {text: "puppies"}
-        ];
+        $scope.data = [];
+
+        $scope.getThings = function(){
+            $http.get('api/things').success(function(things) {
+                $scope.data = things;
+            });
+        };
+
+        $scope.getThings();
 
         $scope.addData = function(){
             if($scope.textField.length >= 1) {
-                $scope.data.push({text: $scope.textField});
+                $http.post('api/things', {text: $scope.textField}).success(function(){
+                    $scope.getThings();
+                });
                 $scope.textField = "";
             }
         };
 
         $scope.removeData = function(index){
-            $scope.data.splice(index, 1);
+            $http.delete('/api/things/' + $scope.data[index]._id).success(function(){
+                $scope.getThings();
+            });
         };
 
         $scope.cat = function(str1, str2){
