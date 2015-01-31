@@ -42,11 +42,11 @@ exports.create = function(req, res) {
 exports.destroy = function(req, res) {
     Thing.findById(req.params.thing_id, function(err, thing){
       if(err) { res.send(err); return "error: " + err; }
-      if(!thing) { return res.send(404); }
+      if(!thing) { return res.sendStatus(404); }
 
       thing.remove(function(err){
          if(err) { return "error: " + err}
-         return res.send(204);
+         return res.sendStatus(204);
       });
     });
 };
