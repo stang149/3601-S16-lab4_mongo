@@ -1,28 +1,36 @@
 
-// require Express (used for routing and stuff)
+//TODO: clean up comments!
+//TODO: fix bodyparser stuff!
+
+
+//==== Require Things! ==========================================
+
+// Misc Stuff
 var express = require('express');
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
 
+// Get config data for mongoDB.
+var mongoConfig = require('./config/mongo.js');
+
+//==== Use things! ==========================================================
+
 // Including body-parser. See readme for info.
 app.use(bodyParser());
 
-// Specify options for mongoose to use when connecting to mongo server.
-var mongoOptions = {
-    user: "",
-    pass: "",
-    auth: {
-        authdb: 'admin'
-    }
-};
+// make the "public" directory available to the client
+app.use(express.static('client'));
 
-// Connect to mongo server (hosted)
-mongoose.connect('breadfish.aeniug2.net', 'coolData', 27017, mongoOptions);
+//==== Connect to the Database ===============================================
+
+// Connect to Mongo server (hosted)
+mongoose.connect(mongoConfig.mongo.host, mongoConfig.mongo.db, mongoConfig.mongo.port, mongoConfig.mongo.options);
 
 // Connect to local database
 //mongoose.connect('mongodb://127.0.0.1/27017');
 
+//==== Misc ===================================================================
 
 // define options that Express will use when sending files to the client (using res.sendFile)
 var options = {
@@ -30,60 +38,13 @@ var options = {
     dotfiles: 'deny'
 };
 
-// make the "public" directory available to the client
-app.use(express.static('client'));
-
-//============= mongoooooose =================
-
-var Thing = mongoose.model('Thing', {
-    text: String
-});
 
 //===== Defining Routes ========================================================
 
-app.get('/api/things', function(req, res){
-   Thing.find(function(err, things) {
-       if(err){
-           console.log("Error getting data from database");
-           res.send(err)
-       }
+// API Routes
+app.use('/api/things', require('./api/things'));
 
-       res.json(things); // return stuff!
-   });
-});
-
-app.post('/api/things', function(req, res){
-   Thing.create(req.body, function(err, thing){
-       if(err){
-           res.send(err);
-       } else {
-           Thing.find(function (err, things) {
-               if (err) {
-                   res.send(err);
-               }
-
-               res.json(things);
-           });
-       }
-   });
-});
-
-app.delete('/api/things/:thing_id', function(req, res){
-    Thing.remove({_id: req.params.thing_id}, function(err, thing){
-        if (err) {
-            res.send(err);
-        } else {
-            Thing.find(function(err, things) {
-                if (err){
-                    res.send(err)
-                }
-
-                res.json(things);
-            });
-        }
-    });
-});
-
+// Non-API routes
 app.get('/*', function(req, res){
     res.sendFile('index.html', options);
 });
@@ -94,7 +55,7 @@ app.get('*', function(req, res){
     res.sendFile('views/404/404.html', options);
 });
 
-
+//==== Starting the server =====================================================
 
 // Starts the nodejs server on port 9000
 var server = app.listen(9000, function(){
