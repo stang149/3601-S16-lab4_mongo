@@ -2,5 +2,25 @@
 Adding more complicated routing as well as mongo
 
 ## Project Setup
-stuff stuff stuff. 
-this needs updating.
+Install dependancies by running:
+
+````
+npm install && bower install
+````
+
+## Running the project
+To serve the project, run:
+
+````
+grunt serve
+````
+
+## Testing the project
+To run automated testing on the project, run:
+````
+grunt test
+````
+Or run karma through the Webstorm GUI.
+
+
+
