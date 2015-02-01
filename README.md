@@ -22,5 +22,14 @@ grunt test
 ````
 Or run karma through the Webstorm GUI.
 
+## Resources
+Bootstrap Components:
+http://getbootstrap.com/components/
+
+Getting started with mongo:
+http://try.mongodb.org/
+
+
+
 
 
