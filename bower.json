@@ -1,0 +1,22 @@
+{
+  "name": "addingMongoExample",
+  "version": "0.0.0",
+  "homepage": "https://github.com/joethe/playingWithRouting",
+  "authors": [
+    "thele116 <thele116@morris.umn.edu>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "angularjs": "~1.3.11",
+    "angular-ui-router": "~0.2.13"
+  }
+}
