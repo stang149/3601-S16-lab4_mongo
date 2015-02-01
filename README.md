@@ -1,4 +1,6 @@
-# playingWithRouting
-playing around with ui-router and stuff.
+# addingMongo
+Adding more complicated routing as well as mongo
 
-Pretty much trying to re-create a generated project, minus the authentication stuff, by hand.
+## Project Setup
+stuff stuff stuff. 
+this needs updating.
