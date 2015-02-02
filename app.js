@@ -25,10 +25,10 @@ app.use(express.static('client'));
 //==== Connect to the Database ===============================================
 
 // Connect to Mongo server (hosted)
-mongoose.connect(mongoConfig.mongo.host, mongoConfig.mongo.db, mongoConfig.mongo.port, mongoConfig.mongo.options);
+//mongoose.connect(mongoConfig.mongo.host, mongoConfig.mongo.db, mongoConfig.mongo.port, mongoConfig.mongo.options);
 
-// Connect to local database. This should work on the lab machines, if it doesn't we need to investigate...
-//mongoose.connect('mongodb://127.0.0.1:27017/test');
+// Connect to local Mongo Database. This should work on the lab machines, if it doesn't we need to investigate...
+mongoose.connect('mongodb://127.0.0.1:27017/things');
 
 //==== Misc ===================================================================
 
