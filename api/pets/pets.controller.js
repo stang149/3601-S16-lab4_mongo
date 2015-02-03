@@ -18,7 +18,7 @@ exports.index = function(req, res) {
             console.log("Error getting data from database");
             res.send(err)
         } else {
-            res.json(pets); // return stuff!
+            res.json(pets); // return results
         }
     });
 };

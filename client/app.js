@@ -1,4 +1,4 @@
-// Client side angular app thing!
+// Client side angular app!
 
 'use strict';
 
