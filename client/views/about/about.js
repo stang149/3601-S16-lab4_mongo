@@ -2,7 +2,7 @@
 
 console.log("about.js loaded!");
 
-angular.module("superSweetAppThing")
+angular.module("appModule")
     .config(function($stateProvider){
         $stateProvider
             .state('about', {

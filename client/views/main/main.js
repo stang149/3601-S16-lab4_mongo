@@ -2,7 +2,7 @@
 
 console.log("main.js loaded!");
 
-angular.module("superSweetAppThing")
+angular.module("appModule")
     .config(function($stateProvider){
         $stateProvider
             .state('main', {
