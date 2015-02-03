@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("superSweetAppThing")
+angular.module("appModule")
     .controller('mainCtrl', function($scope, $http){
         console.log("main controller loaded!");
 
@@ -9,26 +9,26 @@ angular.module("superSweetAppThing")
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         $scope.data = [];
 
-        $scope.getThings = function(){
-            $http.get('api/things').success(function(things) {
-                $scope.data = things;
+        $scope.getPets = function(){
+            $http.get('api/pets').success(function(pets) {
+                $scope.data = pets;
             });
         };
 
-        $scope.getThings();
+        $scope.getPets();
 
         $scope.addData = function(){
             if($scope.textField.length >= 1) {
-                $http.post('api/things', {text: $scope.textField}).success(function(){
-                    $scope.getThings();
+                $http.post('api/pets', {text: $scope.textField}).success(function(){
+                    $scope.getPets();
                 });
                 $scope.textField = "";
             }
         };
 
         $scope.removeData = function(index){
-            $http.delete('/api/things/' + $scope.data[index]._id).success(function(){
-                $scope.getThings();
+            $http.delete('/api/pets/' + $scope.data[index]._id).success(function(){
+                $scope.getPets();
             });
         };
 

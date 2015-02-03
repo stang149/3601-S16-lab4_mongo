@@ -1,8 +1,8 @@
-// Client side angular app thing!
+// Client side angular app!
 
 'use strict';
 
-angular.module('superSweetAppThing', [
+angular.module('appModule', [
     'ui.router'
 ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider){

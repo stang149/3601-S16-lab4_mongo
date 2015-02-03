@@ -1,6 +1,6 @@
 //'use strict';
 
-angular.module("superSweetAppThing")
+angular.module("appModule")
     .controller('navbarCtrl', function($scope, $location){
     console.log(" navbar controller loaded!");
 

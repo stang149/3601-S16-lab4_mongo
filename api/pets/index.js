@@ -1,16 +1,16 @@
 'use strict';
 
-// Defining the "things" API module
+// Defining the "pets" API module
 // =======================================
 
 
 var express = require('express');
-var controller = require('./things.controller');
+var controller = require('./pets.controller.js');
 
 var router = express.Router();
 
 router.get('/', controller.index);
 router.post('/', controller.create);
-router.delete('/:thing_id', controller.destroy);
+router.delete('/:pet_id', controller.destroy);
 
 module.exports = router;

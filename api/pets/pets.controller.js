@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 // Defining Model
 // =====================================================
 
-var Thing = mongoose.model('Thing', {
+var Pet = mongoose.model('Pet', {
     text: String
 });
 
@@ -13,38 +13,38 @@ var Thing = mongoose.model('Thing', {
 // =====================================================
 
 exports.index = function(req, res) {
-    Thing.find(function (err, things) {
+    Pet.find(function (err, pets) {
         if (err) {
             console.log("Error getting data from database");
             res.send(err)
         } else {
-            res.json(things); // return stuff!
+            res.json(pets); // return results
         }
     });
 };
 
 exports.create = function(req, res) {
-    Thing.create(req.body, function (err, thing) {
+    Pet.create(req.body, function (err, pet) {
         if (err) {
             res.send(err);
         } else {
-            Thing.find(function (err, things) {
+            Pet.find(function (err, pets) {
                 if (err) {
                     res.send(err);
                 }
 
-                res.json(things);
+                res.json(pets);
             });
         }
     });
 };
 
 exports.destroy = function(req, res) {
-    Thing.findById(req.params.thing_id, function(err, thing){
+    Pet.findById(req.params.pet_id, function(err, pet){
       if(err) { res.send(err); return "error: " + err; }
-      if(!thing) { return res.sendStatus(404); }
+      if(!pet) { return res.sendStatus(404); }
 
-      thing.remove(function(err){
+      pet.remove(function(err){
          if(err) { return "error: " + err}
          return res.sendStatus(204);
       });

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("superSweetAppThing")
+angular.module("appModule")
     .config(function($stateProvider){
         $stateProvider
             .state('404', {
