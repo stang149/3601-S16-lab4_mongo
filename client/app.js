@@ -2,7 +2,7 @@
 
 'use strict';
 
-angular.module('superSweetAppThing', [
+angular.module('appModule', [
     'ui.router'
 ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider){

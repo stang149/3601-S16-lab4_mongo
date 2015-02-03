@@ -10,7 +10,7 @@ angular.module("superSweetAppThing")
         $scope.data = [];
 
         $scope.getThings = function(){
-            $http.get('api/things').success(function(things) {
+            $http.get('api/pets').success(function(things) {
                 $scope.data = things;
             });
         };
@@ -19,7 +19,7 @@ angular.module("superSweetAppThing")
 
         $scope.addData = function(){
             if($scope.textField.length >= 1) {
-                $http.post('api/things', {text: $scope.textField}).success(function(){
+                $http.post('api/pets', {text: $scope.textField}).success(function(){
                     $scope.getThings();
                 });
                 $scope.textField = "";
@@ -27,7 +27,7 @@ angular.module("superSweetAppThing")
         };
 
         $scope.removeData = function(index){
-            $http.delete('/api/things/' + $scope.data[index]._id).success(function(){
+            $http.delete('/api/pets/' + $scope.data[index]._id).success(function(){
                 $scope.getThings();
             });
         };

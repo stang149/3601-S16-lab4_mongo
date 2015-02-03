@@ -14,7 +14,7 @@ var mongoose = require('mongoose');
 // Get config data for mongoDB.
 var mongoConfig = require('./config/mongo.js');
 
-//==== Use things! ==========================================================
+//==== Use pets! ==========================================================
 
 // Including body-parser. See readme for info.
 app.use(bodyParser.urlencoded({extended: false}));
@@ -29,7 +29,7 @@ app.use(express.static('client'));
 //mongoose.connect(mongoConfig.mongo.host, mongoConfig.mongo.db, mongoConfig.mongo.port, mongoConfig.mongo.options);
 
 // Connect to local Mongo Database. This should work on the lab machines, if it doesn't we need to investigate...
-mongoose.connect('mongodb://127.0.0.1:27017/things');
+mongoose.connect('mongodb://127.0.0.1:27017/pets');
 
 //==== Misc ===================================================================
 
@@ -43,7 +43,7 @@ var options = {
 //===== Defining Routes ========================================================
 
 // API Routes
-app.use('/api/things', require('./api/things'));
+app.use('/api/pets', require('./api/pets'));
 
 // Non-API routes
 app.get('/*', function(req, res){
