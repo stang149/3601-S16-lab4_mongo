@@ -17,7 +17,8 @@ var mongoConfig = require('./config/mongo.js');
 //==== Use things! ==========================================================
 
 // Including body-parser. See readme for info.
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // make the "public" directory available to the client
 app.use(express.static('client'));
