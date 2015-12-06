@@ -1,4 +1,4 @@
-# addingMongo
+# CSCI 3601 Lab #4 - Adding Mongo
 Adding more complicated routing as well as mongo
 
 ## Project Setup
