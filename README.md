@@ -9,7 +9,7 @@ npm install && bower install
 ````
 
 ## Adding mongo.js
-Connecting to a mongo database requires spacifying a user name, a password, and a few other parameters. This information is stored in a file mongo.js in the config directory. Such files are stored locally on the server and are excluded from git commits (added to .gitignore). This project contains a sample mongo.js file (mongo.example.js). However, it connects to a test database which doesn't store data between project runs. 
+Connecting to a mongo database requires specifying a user name, a password, and a few other parameters. This information is stored in a file mongo.js in the config directory. Such files are stored locally on the server and are excluded from git commits (added to .gitignore). This project contains a sample mongo.js file (mongo.example.js). However, it connects to a test database which doesn't store data between project runs. 
 
 > If you're interested in why it is **VERY VERY IMPORTANT** to make sure that the mongo.js file is in the .gitignore, give this a read: https://github.com/ChALkeR/notes/blob/master/Do-not-underestimate-credentials-leaks.md
 
@@ -34,7 +34,7 @@ Bootstrap Components:
 http://getbootstrap.com/components/
 
 Getting started with mongo:
-http://try.mongodb.org/
+http://mongly.openmymind.net/tutorial/index
 
 
 
