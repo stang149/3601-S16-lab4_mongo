@@ -29,6 +29,10 @@ grunt test
 ````
 Or run karma through the Webstorm GUI.
 
+## Travis-CI
+
+By now, you should know the drill. Set up Travis as you did in Lab 3, and refer back to that if you have forgotten how to.
+
 ## Resources
 Bootstrap Components:
 http://getbootstrap.com/components/
