@@ -1,10 +1,10 @@
 // Client side angular app!
-
 'use strict';
 
-angular.module('appModule', [
-    'ui.router'
-])
+
+angular.module('stdComponents', []);
+
+angular.module('appModule', ['stdComponents', 'ui.router'])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider){
         $urlRouterProvider.otherwise('/404');
 

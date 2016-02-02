@@ -1,20 +1,22 @@
 //'use strict';
 
-angular.module("appModule")
-    .controller('navbarCtrl', function($scope, $location){
-    console.log(" navbar controller loaded!");
+angular.module('stdComponents').controller('navbarCtl', function($location){
+    console.log("Navbar controller loaded!");
 
-    $scope.location = $location.path();
+    var navbar = this;
 
-    $scope.textField = "";
+    navbar.location = $location.path();
 
-    $scope.pages = [
+    navbar.textField = "";
+
+    navbar.pages = [
         {text: "Home", link: '/'},
         {text: "About", link: '/about'},
-        {text: "404 Page", link: '/wefwrtbertbeb'}
+        {text: "404 Page", link: '/w45rtw4t45t'}
     ];
 
-    $scope.isActive = function(route){
-        return route === $location.path()
-    };
+    navbar.isActive = function(route){
+        return route === navbar.location;
+    }
+
 });
