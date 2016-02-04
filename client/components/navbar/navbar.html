@@ -1,5 +1,5 @@
-<div id="navBar" ng-controller="navbarCtrl">
+<div id="navBar" ng-controller="navbarCtl as navbar">
     <ul class="nav nav-pills">
-        <li role="presentation" ng-repeat="item in pages track by $index" ng-class="{active: isActive(item.link)}"><a href="{{item.link}}">{{item.text}}</a></li>
+        <li role="presentation" ng-repeat="item in navbar.pages track by $index" ng-class="{active: navbar.isActive(item.link)}"><a href="{{item.link}}">{{item.text}}</a></li>
     </ul>
 </div>
