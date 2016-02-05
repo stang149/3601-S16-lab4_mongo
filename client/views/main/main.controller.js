@@ -1,43 +1,45 @@
 'use strict';
 
 angular.module("appModule")
-    .controller('mainCtrl', function($scope, $http){
+    .controller('mainCtrl', function($http){
         console.log("main controller loaded!");
 
-        $scope.textField = "";
+        var self = this;
+
+        self.textField = "";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
-        $scope.data = [];
+        self.data = [];
 
-        $scope.getPets = function(){
+        self.getPets = function(){
             $http.get('api/pets').success(function(pets) {
-                $scope.data = pets;
+                self.data = pets;
             });
         };
 
-        $scope.getPets();
+        self.getPets();
 
-        $scope.addData = function(){
-            if($scope.textField.length >= 1) {
-                $http.post('api/pets', {text: $scope.textField}).success(function(){
-                    $scope.getPets();
+        self.addData = function(){
+            if(self.textField.length >= 1) {
+                $http.post('api/pets', {text: self.textField}).success(function(){
+                    self.getPets();
                 });
-                $scope.textField = "";
+                self.textField = "";
             }
         };
 
-        $scope.removeData = function(index){
-            $http.delete('/api/pets/' + $scope.data[index]._id).success(function(){
-                $scope.getPets();
+        self.removeData = function(index){
+            $http.delete('/api/pets/' + self.data[index]._id).success(function(){
+                self.getPets();
             });
         };
 
-        $scope.cat = function(str1, str2){
+        self.cat = function(str1, str2){
             return str1 + str2;
         };
 
-        $scope.itemsInList = function(){
-            return $scope.data.length;
+        self.itemsInList = function(){
+            return self.data.length;
         };
 
     });

@@ -8,6 +8,7 @@ angular.module("appModule")
             .state('main', {
                 url: '/',
                 templateUrl: 'views/main/main.html',
-                controller: 'mainCtrl'
+                controller: 'mainCtrl',
+                controllerAs: 'main'
             });
     });

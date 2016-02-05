@@ -3,20 +3,20 @@
 angular.module('stdComponents').controller('navbarCtl', function($location){
     console.log("Navbar controller loaded!");
 
-    var navbar = this;
+    var self = this;
 
-    navbar.location = $location.path();
+    self.location = $location.path();
 
-    navbar.textField = "";
+    self.textField = "";
 
-    navbar.pages = [
+    self.pages = [
         {text: "Home", link: '/'},
         {text: "About", link: '/about'},
         {text: "404 Page", link: '/w45rtw4t45t'}
     ];
 
-    navbar.isActive = function(route){
-        return route === navbar.location;
+    self.isActive = function(route){
+        return route === self.location;
     }
 
 });
