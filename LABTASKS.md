@@ -6,7 +6,7 @@
 
 ##### What are the differences between the folder structure of this project and the previous one? Note that api/pets is server side routing, and the client folder is client-side handling.
 
-##### How is app.js (at the project root) different from the ones in the previous two labs? GIve examples of the kinds of urls that app.js handles, and describe where each case will be routed. Experiment with the application.
+##### How is app.js (at the project root) different from the ones in the previous two labs? Give examples of the kinds of urls that app.js handles, and describe where each case will be routed.
 
 ##### The project connected to the database via mongoose. Where is this connection set?
 
