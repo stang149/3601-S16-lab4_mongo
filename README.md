@@ -1,5 +1,7 @@
 # CSCI 3601 Lab #4 - Adding Mongo
-Adding more complicated routing as well as mongo
+During this lab, we will introduce you to the idea of client-side routing. Additionally, you will complete your training in the use of the MEAN stack by adding MongoDB to it. To interface with the database, you will use Mongoose. Specifically, you will create another GPA calculator that is backed by a database and uses a (simple) API that you create to access it.
+
+Your specific tasks for this lab can be found in the [LABTASKS.md](LABTASKS.md) file in this repository.
 
 ## Project Setup
 Install dependancies by running:
@@ -32,6 +34,8 @@ Or run karma through the Webstorm GUI.
 ## Travis-CI
 
 By now, you should know the drill. Set up Travis as you did in Lab 3, and refer back to that if you have forgotten how to.
+
+> If there are issues, let the lab assistants know.
 
 ## Resources
 Bootstrap Components:
