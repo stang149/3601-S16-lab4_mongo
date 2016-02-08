@@ -13,7 +13,7 @@
 ##### Study the file api/pets.controller.js, answer the following questions:
 -  What kind of documents would the database contain? What is the field in the document?
 -  What functions are defined in the controller? How do they change the database data?
--  How dows one get or delete elements in the database?
+-  How does one get or delete elements in the database?
 
 ##### What is the purpose of index.js in the api/pets? Where is it referenced?
 
