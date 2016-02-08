@@ -8,7 +8,7 @@
 
 ##### How is app.js (at the project root) different from the ones in the previous two labs? Give examples of the kinds of urls that app.js handles, and describe where each case will be routed.
 
-##### The project connected to the database via mongoose. Where is this connection set?
+##### The project is connected to the database via mongoose. Where is this connection set?
 
 ##### Study the file api/pets.controller.js, answer the following questions:
 -  What kind of documents would the database contain? What is the field in the document?
